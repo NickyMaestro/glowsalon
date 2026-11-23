@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Now - Glow Salon Nyahururu</title>
+<style>
+body{font-family:Arial,sans-serif;margin:0;background:#fff5f8;color:#333;text-align:center;}
+header{background:#d63384;color:white;padding:25px 15px;}
+header h1{margin:0;font-size:28px;}
+.nav{background:white;padding:12px;box-shadow:0 2px 5px rgba(0,0,0,0.1);}
+.nav a{color:#d63384;text-decoration:none;font-weight:bold;margin:0 12px;font-size:16px;}
+.box{background:white;margin:15px;border-radius:15px;padding:20px;box-shadow:0 2px 10px rgba(0,0,0,0.08);text-align:left;}
+label{font-weight:bold;display:block;margin-top:15px;}
+input,select{width:100%;padding:12px;margin-top:5px;border:1px solid #ddd;border-radius:10px;font-size:16px;box-sizing:border-box;}
+.btn{width:100%;background:#25D366;color:white;padding:16px;border:none;border-radius:30px;font-weight:bold;font-size:18px;margin-top:20px;cursor:pointer;}
+footer{background:#333;color:white;padding:20px;font-size:14px;}
+</style>
+</head>
+<body>
+<header>
+<h1>📅 Book Your Appointment</h1>
+<p>Fill this form - it will open WhatsApp automatically!</p>
+</header>
+<div class="nav">
+<a href="index.html">Home</a>
+<a href="services.html">Prices</a>
+<a href="booking.html">Book Now</a>
+</div>
+
+<div class="box">
+<label>Your Name:</label>
+<input type="text" id="name" placeholder="e.g. Mary Wanjiru">
+
+<label>Your Phone:</label>
+<input type="tel" id="phone" placeholder="e.g. 0712 345 678">
+
+<label>What do you want?</label>
+<select id="service">
+<option>Knotless Braids - KSh 1,500</option>
+<option>Stitch Braids - KSh 1,200</option>
+<option>Cornrows - KSh 800</option>
+<option>Acrylic Nails - KSh 800</option>
+<option>Manicure & Pedicure - KSh 1,000</option>
+<option>Soft Glam Makeup - KSh 1,500</option>
+<option>Bridal Makeup - KSh 3,500</option>
+<option>Wig Installation - KSh 1,000</option>
+</select>
+
+<label>Which Date?</label>
+<input type="date" id="date">
+
+<label>What Time?</label>
+<select id="time">
+<option>8:00 AM</option>
+<option>10:00 AM</option>
+<option>12:00 PM</option>
+<option>2:00 PM</option>
+<option>4:00 PM</option>
+<option>6:00 PM</option>
+</select>
+
+<button class="btn" onclick="bookNow()">📱 Send Booking on WhatsApp</button>
+<p style="text-align:center;font-size:14px;color:#888;">We will reply in a few minutes to confirm.</p>
+</div>
+
+<script>
+function bookNow(){
+var name=document.getElementById('name').value;
+var phone=document.getElementById('phone').value;
+var service=document.getElementById('service').value;
+var date=document.getElementById('date').value;
+var time=document.getElementById('time').value;
+if(!name || !phone){alert('Please enter your name and phone!');return;}
+var msg="Hi Glow Salon! I want to book:%0A%0AName: "+name+"%0APhone: "+phone+"%0AService: "+service+"%0ADate: "+date+"%0ATime: "+time;
+window.open("https://wa.me/254740263610?text="+msg, "_blank");
+}
+</script>
+
+<footer><p>© 2026 Glow Salon Nyahururu | 📞 0740 263 610</p></footer>
+</body>
+</html>
